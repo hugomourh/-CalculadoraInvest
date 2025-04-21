@@ -1,7 +1,7 @@
 
 'use client'
 import "bootstrap/dist/css/bootstrap.min.css"
-import { useEffect } from 'react';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { useState} from "react";
 
 
@@ -20,9 +20,7 @@ export default function Calculadora() {
   const [Resultado, setResultado] = useState(null);
   
 
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.min.js");
-  }, []);
+ 
 
  
 

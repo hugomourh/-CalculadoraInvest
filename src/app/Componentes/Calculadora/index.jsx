@@ -1,8 +1,7 @@
 
 'use client'
-
 import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/css/calculadora.css"
+
 import { useState} from "react";
 
 
@@ -75,7 +74,7 @@ export default function Calculadora() {
   <h1 className="text-center">Simular investimento</h1>
 
 <div className="CorpoForm">
-<form className="formulario text-bg-primary p-3">
+<form className="formulario text-bg-secondary p-3 ">
  
 
  
@@ -145,7 +144,7 @@ required/>
 
 
   <div className="botao">
-  <button className="btn btn-success " type="button" onClick={calcularMontante}>Enviar</button>
+  <button className="btn btn-primary" type="button" onClick={calcularMontante}>Enviar</button>
   </div>
 
   
@@ -158,7 +157,7 @@ required/>
     </div>
 
 
-
+<div className="TamanhoTab">
 <table className="table table-striped tabela" >
 <thead>
 <tr>
@@ -202,6 +201,8 @@ required/>
 
 
 </table>
+
+</div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
   </>

@@ -19,15 +19,15 @@ export default function Calculadora() {
 })
 
 
-  const [aporteInicial, setAporteInicial] = useState();
-  const [aporteMensal, setAporteMensal] = useState();
-  const [taxaAnual, setTaxaAnual] = useState();
-  const [meses, setMeses] = useState();
+  const [aporteInicial, setAporteInicial] = useState("");
+  const [aporteMensal, setAporteMensal] = useState("");
+  const [taxaAnual, setTaxaAnual] = useState("");
+  const [meses, setMeses] = useState("");
   const [temImposto, settemImposto] = useState ("Nao")
-  const [valorInvestido, setValorInvestido] = useState ('')
-  const [ValorImposto, SetValorImposto] = useState ('')
-  const [jurosAcumulado, setjurosAcumulado] = useState ('')
-  const [valorLiquido, setvalorLiquido] = useState ('')
+  const [valorInvestido, setValorInvestido] = useState (null)
+  const [ValorImposto, SetValorImposto] = useState (null)
+  const [jurosAcumulado, setjurosAcumulado] = useState (null)
+  const [valorLiquido, setvalorLiquido] = useState (null)
   const [Resultado, setResultado] = useState(null);
   
 
@@ -36,44 +36,43 @@ export default function Calculadora() {
  
 
   function calcularMontante() {
-    const taxaMensal = taxaAnual / 12 / 100;
-    let montante = aporteInicial * Math.pow(1 + taxaMensal, meses);
+    const aporteInicialNum = Number(aporteInicial);
+  const aporteMensalNum = Number(aporteMensal);
+  const taxaAnualNum = Number(taxaAnual);
+  const mesesNum = Number(meses);
 
-    for (let i = 1; i <= meses; i++) {
-      montante += aporteMensal * Math.pow(1 + taxaMensal, meses - i);
-    }
+  const taxaMensal = taxaAnualNum / 12 / 100;
+  let montante = aporteInicialNum * Math.pow(1 + taxaMensal, mesesNum);
+
+  for (let i = 1; i <= mesesNum; i++) {
+    montante += aporteMensalNum * Math.pow(1 + taxaMensal, mesesNum - i);
+  }
 
   let imposto = 0;
   let aliquota = 0;
 
+  const VLinvestido = aporteInicialNum + aporteMensalNum * mesesNum;
+  const ganhos = montante - VLinvestido;
+
   if (temImposto === "Sim") {
-    if (meses <= 6) aliquota = 0;
-    else if (meses <= 12) aliquota = 20.0;
-    else if (meses <= 24) aliquota = 17.5;
+    if (mesesNum <= 6) aliquota = 0;
+    else if (mesesNum <= 12) aliquota = 20.0;
+    else if (mesesNum <= 24) aliquota = 17.5;
     else aliquota = 15.0;
 
-    const valorInvestido = Number(aporteInicial) + Number(aporteMensal) * meses;
-    const ganhos = montante - valorInvestido;
     imposto = ganhos * (aliquota / 100);
-
     SetValorImposto(imposto.toFixed(2));
   } else {
     SetValorImposto("Isento");
   }
 
-
-  const VLinvestido = aporteInicial + aporteMensal * meses;
-  const JurosACM = montante - VLinvestido;
+  const JurosACM = ganhos;
   const ValorLQ = montante - imposto;
-  
 
-
-  setvalorLiquido(ValorLQ.toFixed(2))
+  setvalorLiquido(ValorLQ.toFixed(2));
   setResultado(montante.toFixed(2));
-  setjurosAcumulado (JurosACM.toFixed(2))
-  setValorInvestido (VLinvestido.toFixed(2))
- 
-
+  setjurosAcumulado(JurosACM.toFixed(2));
+  setValorInvestido(VLinvestido.toFixed(2));
 }
 
 

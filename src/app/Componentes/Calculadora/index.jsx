@@ -1,7 +1,7 @@
 
 'use client'
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import { useEffect } from 'react';
 import { useState} from "react";
 
 
@@ -18,7 +18,11 @@ export default function Calculadora() {
   const [jurosAcumulado, setjurosAcumulado] = useState ('')
   const [valorLiquido, setvalorLiquido] = useState ('')
   const [Resultado, setResultado] = useState(null);
- 
+  
+
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.min.js");
+  }, []);
 
  
 
@@ -204,7 +208,7 @@ required/>
 
 </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+    
   </>
   );
 }

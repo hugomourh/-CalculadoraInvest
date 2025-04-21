@@ -1,17 +1,28 @@
 
 'use client'
 import "bootstrap/dist/css/bootstrap.min.css"
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import { useEffect } from "react";
 import { useState} from "react";
 
 
 
+
+
+  
+
 export default function Calculadora() {
 
-  const [aporteInicial, setAporteInicial] = useState(300);
-  const [aporteMensal, setAporteMensal] = useState(300);
-  const [taxaAnual, setTaxaAnual] = useState(10);
-  const [meses, setMeses] = useState(10);
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+          import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }
+})
+
+
+  const [aporteInicial, setAporteInicial] = useState();
+  const [aporteMensal, setAporteMensal] = useState();
+  const [taxaAnual, setTaxaAnual] = useState();
+  const [meses, setMeses] = useState();
   const [temImposto, settemImposto] = useState ("Nao")
   const [valorInvestido, setValorInvestido] = useState ('')
   const [ValorImposto, SetValorImposto] = useState ('')

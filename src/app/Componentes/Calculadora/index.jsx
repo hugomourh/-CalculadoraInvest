@@ -36,7 +36,7 @@ export default function Calculadora() {
  
 
   function calcularMontante() {
-    const aporteInicialNum = Number(aporteInicial);
+  const aporteInicialNum = Number(aporteInicial);
   const aporteMensalNum = Number(aporteMensal);
   const taxaAnualNum = Number(taxaAnual);
   const mesesNum = Number(meses);

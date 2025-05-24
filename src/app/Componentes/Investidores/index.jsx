@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from 'next/link';
 import { useEffect } from "react";
 
+
 export default function Investimento() {
 
   useEffect(() => {
@@ -12,12 +13,17 @@ export default function Investimento() {
 
   return (
     <>
+
+
+    
+
+
+
+
       <div className="container">
         <div className="Page_Topo">
           <h1>Zzz Investimentos</h1>
-          <h3>Investidores</h3>
-          <h3>Calculadora</h3>
-
+           
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -31,11 +37,14 @@ export default function Investimento() {
               <li><Link href="#">Suporte</Link></li>
               <li><Link href="#">Denúncia</Link></li>
               <li><Link href="#">Entrar em Contato</Link></li>
+              <li><Link href="#">Calculadora</Link></li>
+              <li><Link href="#">Investidores</Link></li>
+              
             </ul>
           </div>
         </div>
-
-        <div className="alert alert-danger d-flex align-items-center alert-dismissible fade show Alerta" role="alert">
+        <hr />
+              <div className="alert alert-danger d-flex align-items-center alert-dismissible fade show Alerta" role="alert">
           Essa página é voltada apenas para fins didáticos. Se tiver interesse em investimentos, recomendo que procure um especialista.<br />
           Mas a calculadora funciona perfeitamente
           <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -105,6 +114,8 @@ De fato, grande parte de sua fortuna foi conquistada “shorteando” moedas est
           </ul>
         </div>
       </div>
+
+    
     </>
   );
 }

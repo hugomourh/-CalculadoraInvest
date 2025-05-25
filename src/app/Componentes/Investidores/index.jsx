@@ -27,7 +27,7 @@ export default function Investimento(props) {
           
         <div>
 
-        <button  onClick={props.trocarTemaPagina}>
+        <button className="BotaoTema" onClick={props.trocarTemaPagina}>
               {props.alterarTema ? <FiSun /> : <FiMoon />}
             </button>
 

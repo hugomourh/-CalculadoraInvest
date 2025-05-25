@@ -65,12 +65,8 @@
 }
 
 
-.BotaoTema{
-  padding: 5px;
-  border-radius: 5px;
-  position: relative;
-  left: 15vh;
-}
+
+
 
 @media (max-width: 768px) {
 .Page_Topo{

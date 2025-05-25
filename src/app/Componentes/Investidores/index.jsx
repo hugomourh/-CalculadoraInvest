@@ -1,9 +1,11 @@
+'use client'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from 'next/link';
 import { useEffect } from "react";
+ import { useState } from "react";
+ import { FiSun, FiMoon } from "react-icons/fi";
 
-
-export default function Investimento() {
+export default function Investimento(props) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -11,40 +13,69 @@ export default function Investimento() {
     }
   }, []);
 
+  
+ 
+
+ 
   return (
     <>
-
-
-    
-
-
-
-
+  <div className={props.alterarTema ? "noite" : "dia"}>
       <div className="container">
         <div className="Page_Topo">
           <h1>Zzz Investimentos</h1>
-           
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Mais Informações
+
+          
+        <div>
+
+        <button className="BotaoTema" onClick={props.trocarTemaPagina}>
+              {props.alterarTema ? <FiSun /> : <FiMoon />}
             </button>
-            <ul className="dropdown-menu">
-              <li><Link href="#">Suporte</Link></li>
-              <li><Link href="#">Denúncia</Link></li>
-              <li><Link href="#">Entrar em Contato</Link></li>
-              <li><Link href="#">Calculadora</Link></li>
-              <li><Link href="#">Investidores</Link></li>
-              
-            </ul>
-          </div>
+
+      </div>
+
+           
+         <div>
+      {/* Lembrar que o d-lg-block, e usado para tela grandes e o d-lg-block para telas menores */}
+      <div className="dropdown d-none d-lg-block">
+        <button 
+          className="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Mais Informações
+        </button>
+        <ul className="dropdown-menu">
+          <li><Link href="#">Suporte</Link></li>
+          <li><Link href="#">Denúncia</Link></li>
+          <li><Link href="#">Entrar em Contato</Link></li>
+          <li><Link href="#">Calculadora</Link></li>
+          <li><Link href="#">Investidores</Link></li>
+        </ul>
+      </div>
+
+      
+      <div className="dropdown d-lg-none">
+        <button
+          className="btn btn-secondary"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          ☰ 
+        </button>
+        <ul className="dropdown-menu">
+          <li><Link href="#">Suporte</Link></li>
+          <li><Link href="#">Denúncia</Link></li>
+          <li><Link href="#">Entrar em Contato</Link></li>
+          <li><Link href="#">Calculadora</Link></li>
+          <li><Link href="#">Investidores</Link></li>
+        </ul>
+      </div>
+    </div>
         </div>
         <hr />
-              <div className="alert alert-danger d-flex align-items-center alert-dismissible fade show Alerta" role="alert">
+              <div className="Alerta alert alert-danger d-flex align-items-center alert-dismissible fade show Alerta" role="alert">
           Essa página é voltada apenas para fins didáticos. Se tiver interesse em investimentos, recomendo que procure um especialista.<br />
           Mas a calculadora funciona perfeitamente
           <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -54,7 +85,7 @@ export default function Investimento() {
           <h1 className="text-center">Principais Investidores do Mundo</h1>
         </div>
 
-        {/* Investidores */}
+       
         <div className="InvestPage">
           <h3>Benjamin Graham</h3>
           <p>Sendo um investidor muito eficaz no que fazia, conseguiu tornar-se um sócio da empresa onde atuava, mostrando sua habilidade.
@@ -115,7 +146,7 @@ De fato, grande parte de sua fortuna foi conquistada “shorteando” moedas est
         </div>
       </div>
 
-    
+</div>
     </>
   );
 }

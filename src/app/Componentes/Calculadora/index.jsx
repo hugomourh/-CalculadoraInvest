@@ -10,7 +10,7 @@ import { useState} from "react";
 
   
 
-export default function Calculadora() {
+export default function Calculadora(props) {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -79,7 +79,7 @@ export default function Calculadora() {
 
   return (
   <>
-  
+<div className={props.alterarTema ?['noite'] :['dia']}>
 <div className="container">
 
 
@@ -170,11 +170,11 @@ required/>
 
 
 <div className="TamanhoTab">
-<table className="table table-striped tabela" >
+<table className="table table-dark table-striped-columns tabela" >
 <thead>
 <tr>
-  <th>Valor investido</th>
-  <th>{valorInvestido}</th>
+  <th className="corTab">Valor investido</th>
+  <th className="corTab">{valorInvestido}</th>
 </tr>
 </thead>
 
@@ -217,6 +217,9 @@ required/>
 </div>
 </div>
     
+
+
+    </div>
   </>
   );
 }

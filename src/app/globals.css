@@ -1,6 +1,6 @@
 .Page_Topo{
     
-  width: 80vw;
+  width: 60vw;
   margin: auto;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 .TiposInvest{
   width: 70%;
   margin: auto;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 .Alerta{
@@ -34,8 +34,10 @@
 }
 
 .TamanhoTab{
+  border-radius: 16px;
   width: 55%;
   margin: auto;
+  padding-bottom: 40px;
 }
 
 .botao{
@@ -51,6 +53,7 @@
 }
 
 .CorpoForm{
+  margin-bottom: 8vh;
   margin-left: 18vw;
   margin-right: 18vw;
   border-radius: 16px;
@@ -59,4 +62,55 @@
 .form-check-input:checked {
   background-color: black;   
   border-color: black;      
+}
+
+
+.BotaoTema{
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  left: 15vh;
+}
+
+@media (max-width: 768px) {
+.Page_Topo{
+  width: 95%;
+  font-size: 10px;
+}
+
+.Alerta{
+  width: 90vw;
+}
+
+.InvestPage .TiposInvest {
+  width: 90vw;
+}
+.CorpoForm{
+width: 85vw;
+margin-right: 25vw;
+margin-left: 3vw;;
+
+}
+
+.TamanhoTab{
+  width: 90vw;
+
+}
+
+.BotaoTema{
+  position: relative;
+  left: 5vh;
+}
+}
+
+.noite{
+  background-color: black;
+  color: white;
+}
+
+.dia{
+  background-color: white;
+  color: black;
+
+  
 }

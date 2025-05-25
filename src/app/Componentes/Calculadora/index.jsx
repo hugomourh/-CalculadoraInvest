@@ -96,6 +96,7 @@ export default function Calculadora(props) {
 value={aporteInicial} 
 onChange={(e) => setAporteInicial (e.target.value)}
 className="form-control"
+placeholder="Digite sua resposta "
 required/>
 
     </div>
@@ -106,7 +107,7 @@ required/>
 value={aporteMensal} 
 onChange={(e) => setAporteMensal (e.target.value)}
  className="form-control"
- placeholder="Digite aqui "
+ placeholder="Digite sua resposta"
  required/>
 </div>
 
@@ -117,7 +118,7 @@ onChange={(e) => setAporteMensal (e.target.value)}
 value={taxaAnual} 
 onChange={(e) => setTaxaAnual (e.target.value)}
 className="form-control"
-placeholder="Digite aqui "
+placeholder="Digite sua resposta"
 required/>
 </div> 
 
@@ -127,7 +128,7 @@ required/>
 value={meses} 
 onChange={(e) => setMeses(e.target.value)}
 className="form-control"
-placeholder="Digite aqui "
+placeholder="Digite sua resposta"
 required/>
 </div> 
 
